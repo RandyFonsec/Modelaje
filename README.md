@@ -1,8 +1,5 @@
 # Modelaje
 TC Diseño de Software
-
- #EN PROCESO -> .
- #LISTO -> *
  
 Registrar un formulario
 
