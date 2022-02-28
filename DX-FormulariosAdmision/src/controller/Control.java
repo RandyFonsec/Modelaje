@@ -27,6 +27,8 @@ public class Control {
     
     //atributos de acceso controlado 
     private GestorCarreras gCarreras;
+    private GestorFormularios gFormularios;
+    
 
     public static Control getInstance(){
         if (singletonControl == null){
@@ -36,6 +38,7 @@ public class Control {
     }
     private Control() {
         dto = new DTOCarrera();
+        dtoFormulario= new DTOFormulario();
         gCarreras = new GestorCarreras();  // se habilita un gestor con carreras precreadas    
     }
 

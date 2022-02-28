@@ -26,7 +26,10 @@ public class DTOFormulario {
     private String numeroTelefonico;
     private String direccionResidencia;
     private String institucion;
-
+    
+    public DTOFormulario(){
+        
+    }
     public DTOFormulario(int identificador, String estado, String carreraSolicitada, int puntajeObtenido, int identificacion, String nombre, String apellido, Date fechaNacimiento, int edad, String correoElectronico, String numeroTelefonico, String direccionResidencia, String institucion) {
         this.identificador = identificador;
         this.estado = estado;
