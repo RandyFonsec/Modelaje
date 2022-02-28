@@ -30,17 +30,39 @@ public class DAOFormulariosImpl implements DAOTrasaccional{
     }
     @Override
     public boolean create(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Formulario formulario = (Formulario)obj;
+        for (int i = 0; i < tablaFormularios.size(); i++) {
+            Formulario formularioActual = tablaFormularios.get(i);
+            
+            if (formularioActual.equals(formulario))
+                return false;   // no se puede registrar formulario con el mismo código o nombre
+        }
+        return tablaFormularios.add(formulario);
     }
 
     @Override
     public boolean update(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Formulario formulario = (Formulario)obj;
+        for (int i = 0; i < tablaFormularios.size(); i++) {
+            Formulario formularioActual = tablaFormularios.get(i);
+            if (formularioActual.equals(formulario)){
+                tablaFormularios.set(i, formulario);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public Object get(Object key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int codigoALocalizar = (int) key;
+        for (int i = 0; i < tablaFormularios.size(); i++) {
+            Formulario formularioActual = tablaFormularios.get(i);
+            if (formularioActual.getIdentificador() == codigoALocalizar) {
+                return formularioActual;
+            }
+        }
+        return null;  // no apareció el formulario solicitado
     }
 
     @Override

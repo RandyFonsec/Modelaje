@@ -22,6 +22,8 @@ public class Control {
     
     //Atributo DTO Utilitario para la transferencia de datos asociados a la entidad Carrera
     private DTOCarrera dto;
+    //Atributo DTO Utilitario para la transferencia de datos asociados a la entidad Formulario
+    private DTOFormulario dtoFormulario;
     
     //atributos de acceso controlado 
     private GestorCarreras gCarreras;
@@ -39,6 +41,10 @@ public class Control {
 
     public DTOCarrera getDto() {
         return dto;
+    }
+    
+    public DTOFormulario getDtoFormulario(){
+        return dtoFormulario;
     }
     
     public boolean crearCarrera(DTOCarrera dto){      
