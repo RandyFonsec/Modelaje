@@ -39,7 +39,8 @@ public class Control {
     private Control() {
         dto = new DTOCarrera();
         dtoFormulario= new DTOFormulario();
-        gCarreras = new GestorCarreras();  // se habilita un gestor con carreras precreadas    
+        gCarreras = new GestorCarreras();  // se habilita un gestor con carreras precreadas   
+        gFormularios = new GestorFormularios();
     }
 
     public DTOCarrera getDto() {
@@ -92,5 +93,10 @@ public class Control {
             return gCarreras.modificarCarrera(laCarrera);
         }
         return false;
+    }
+    
+    
+    public boolean crearFormulario(DTOFormulario dtoFormulario){
+        
     }
 }

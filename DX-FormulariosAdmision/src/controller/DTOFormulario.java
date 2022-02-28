@@ -16,7 +16,6 @@ public class DTOFormulario {
     private int identificador;
     private String estado;
     private String carreraSolicitada;
-    private int puntajeObtenido;
     private int identificacion;
     private String nombre;
     private String apellido;
@@ -34,7 +33,6 @@ public class DTOFormulario {
         this.identificador = identificador;
         this.estado = estado;
         this.carreraSolicitada = carreraSolicitada;
-        this.puntajeObtenido = puntajeObtenido;
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -70,13 +68,6 @@ public class DTOFormulario {
         this.carreraSolicitada = carreraSolicitada;
     }
 
-    public int getPuntajeObtenido() {
-        return puntajeObtenido;
-    }
-
-    public void setPuntajeObtenido(int puntajeObtenido) {
-        this.puntajeObtenido = puntajeObtenido;
-    }
 
     public int getIdentificacion() {
         return identificacion;

@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package controller;
-
+import controller.DAO.DAOFormulariosImpl;
+import model.Formulario;
 /**
  *
  * @author Randy
@@ -14,4 +15,9 @@ public class GestorFormularios {
     public GestorFormularios(){
         
     }
+    
+    public boolean agregarFormulario(Formulario formulario){
+        return DAOFormulariosImpl.getInstance().create(formulario);
+    }
+    
 }
