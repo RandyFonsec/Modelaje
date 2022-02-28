@@ -45,7 +45,7 @@ public class DAOFormulariosImpl implements DAOTrasaccional{
 
     @Override
     public List getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return tablaFormularios;
     }
     
 }
