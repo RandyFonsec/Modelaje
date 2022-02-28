@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package controller;
 
 import java.util.Date;
-import java.util.Objects;
+import model.Carrera;
 
 /**
  *
  * @author Randy
  */
-public class Formulario {
+public class DTOFormulario {
     private int identificador;
-    private TEstado estado;
-    private Carrera carreraSolicitada;
+    private String estado;
+    private String carreraSolicitada;
     private int puntajeObtenido;
     private int identificacion;
     private String nombre;
@@ -26,9 +26,21 @@ public class Formulario {
     private String numeroTelefonico;
     private String direccionResidencia;
     private String institucion;
-    
-    public Formulario(){
-        
+
+    public DTOFormulario(int identificador, String estado, String carreraSolicitada, int puntajeObtenido, int identificacion, String nombre, String apellido, Date fechaNacimiento, int edad, String correoElectronico, String numeroTelefonico, String direccionResidencia, String institucion) {
+        this.identificador = identificador;
+        this.estado = estado;
+        this.carreraSolicitada = carreraSolicitada;
+        this.puntajeObtenido = puntajeObtenido;
+        this.identificacion = identificacion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.edad = edad;
+        this.correoElectronico = correoElectronico;
+        this.numeroTelefonico = numeroTelefonico;
+        this.direccionResidencia = direccionResidencia;
+        this.institucion = institucion;
     }
 
     public int getIdentificador() {
@@ -37,6 +49,30 @@ public class Formulario {
 
     public void setIdentificador(int identificador) {
         this.identificador = identificador;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCarreraSolicitada() {
+        return carreraSolicitada;
+    }
+
+    public void setCarreraSolicitada(String carreraSolicitada) {
+        this.carreraSolicitada = carreraSolicitada;
+    }
+
+    public int getPuntajeObtenido() {
+        return puntajeObtenido;
+    }
+
+    public void setPuntajeObtenido(int puntajeObtenido) {
+        this.puntajeObtenido = puntajeObtenido;
     }
 
     public int getIdentificacion() {
@@ -110,68 +146,6 @@ public class Formulario {
     public void setInstitucion(String institucion) {
         this.institucion = institucion;
     }
-
-    public TEstado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(TEstado estado) {
-        this.estado = estado;
-    }
-
-    public Carrera getCarreraSolicitada() {
-        return carreraSolicitada;
-    }
-
-    public void setCarreraSolicitada(Carrera carreraSolicitada) {
-        this.carreraSolicitada = carreraSolicitada;
-    }
-
-    public int getPuntajeObtenido() {
-        return puntajeObtenido;
-    }
-
-    public void setPuntajeObtenido(int puntajeObtenido) {
-        this.puntajeObtenido = puntajeObtenido;
-    }
-
-    @Override
-    public String toString() {
-        return "Formulario{" + "identificador=" + identificador + ", estado=" + estado + ", carreraSolicitada=" + carreraSolicitada + ", puntajeObtenido=" + puntajeObtenido + ", identificacion=" + identificacion + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", edad=" + edad + ", correoElectronico=" + correoElectronico + ", numeroTelefonico=" + numeroTelefonico + ", direccionResidencia=" + direccionResidencia + ", institucion=" + institucion + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Formulario other = (Formulario) obj;
-        if (this.identificador != other.identificador) {
-            return false;
-        }
-        if (!Objects.equals(this.nombre, other.nombre)) {
-            return false;
-        }
-        if (!Objects.equals(this.apellido, other.apellido)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
     
     
     
