@@ -4,7 +4,7 @@ TC Diseño de Software
  #EN PROCESO -> .
  #LISTO -> *
  
-Registrar un formulario
+Registrar un formulario --
 Simular aplicación de prueba y registrar puntaje obtenido
 Aplicar proceso de cambio estado de formularios
 Listar todas las solicitudes recibidas
