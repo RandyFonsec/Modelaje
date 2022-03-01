@@ -1,9 +1,7 @@
 # Modelaje
 TC Diseño de Software
  
-Registrar un formulario
-
-Simular aplicación de prueba y registrar puntaje obtenido
+Falta:
 
 Aplicar proceso de cambio estado de formularios
 
