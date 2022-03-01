@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Carrera;
 import model.Formulario;
+import model.Sede;
 import model.TEstado;
 /**
  *
@@ -60,8 +61,22 @@ public class GestorFormularios {
         return true;
     }
 
-    List<Formulario> getSolicitudes() {
+    public List<Formulario> getSolicitudes() {
         return DAOFormulariosImpl.getInstance().getAll();
+    }
+    
+    public int getCantidadSolicitudes(String codigoCarrera, String codigoSede, TEstado estado) {
+        List<Formulario> formularios = DAOFormulariosImpl.getInstance().getAll();
+        int cantidad = 0;
+        for (Formulario formulario : formularios) {
+            Carrera carrera = formulario.getCarreraSolicitada();
+            Sede sede = carrera.getLaSede();
+            if (carrera.getCodigo().equals(codigoCarrera) && sede.getCodigo().equals(codigoSede) && 
+                    formulario.getEstado().equals(estado)) {
+                cantidad++;
+            }
+        }
+        return cantidad;
     }
 
 }

@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import model.Carrera;
 import model.Formulario;
+import model.TEstado;
 /**
  *
  * @author Randy
@@ -63,9 +64,18 @@ public class PruebaFormularios {
         dtoFormulario.setInstitucion("Colegio Nocturno");
         
         //Registrando formulario
-        if(Control.getInstance().crearFormulario(dtoFormulario)) System.out.println("Agregado"); else System.out.println("No agregado");;
+        if(Control.getInstance().crearFormulario(dtoFormulario)) System.out.println("Agregado"); else System.out.println("No agregado");
         
-        //Simulando notas
+        
+        //Recuperando solicitudes
+        for(Formulario f : Control.getInstance().visualizarSolicitudes()){
+            System.out.println(f.getIdentificador());
+            System.out.println(f.getPuntajeObtenido());
+            System.out.println(f.getEstado());
+        }
+        
+        
+         //Simulando notas
         Control.getInstance().simularAplicacionExamen();
         
         //Procesar resultados
@@ -74,8 +84,17 @@ public class PruebaFormularios {
         //Recuperando solicitudes
         for(Formulario f : Control.getInstance().visualizarSolicitudes()){
             System.out.println(f.getIdentificador());
+            System.out.println(f.getPuntajeObtenido());
+            System.out.println(f.getEstado());
         }
         
+        int cantidad1 = Control.getInstance().mostrarCantidadSolicitudes("IC", "CA", TEstado.ACEPTADO);
+        int cantidad2 = Control.getInstance().mostrarCantidadSolicitudes("IC", "CA", TEstado.RECHAZADO);
+        int cantidad3 = Control.getInstance().mostrarCantidadSolicitudes("IC", "CA", TEstado.EN_ESPERA);
+        
+        System.out.println("c1 "+cantidad1);
+        System.out.println("c2 "+cantidad2);
+        System.out.println("c3 "+cantidad3);
         
         //Recuperando un formulario por identificador
         Formulario form = Control.getInstance().verFormulario(1);
@@ -83,9 +102,9 @@ public class PruebaFormularios {
             System.out.println("No existe un formulario asociado a ese identificador ");
         }else{
             System.out.println(form.toString());
-        }
+        }   
         
-        
+           System.out.println("Hola");
         
     }
 }

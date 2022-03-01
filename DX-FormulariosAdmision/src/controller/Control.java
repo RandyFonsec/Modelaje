@@ -135,5 +135,8 @@ public class Control {
         return gFormularios.definirResultados();
     }
     
+    public int mostrarCantidadSolicitudes(String codigoCarrera, String codigoSede, TEstado estado) {
+        return gFormularios.getCantidadSolicitudes(codigoCarrera, codigoSede, estado);
+    }
     
 }
