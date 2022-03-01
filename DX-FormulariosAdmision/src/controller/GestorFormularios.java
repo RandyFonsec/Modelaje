@@ -5,7 +5,11 @@
  */
 package controller;
 import controller.DAO.DAOFormulariosImpl;
+import java.util.ArrayList;
+import java.util.List;
+import model.Carrera;
 import model.Formulario;
+import model.TEstado;
 /**
  *
  * @author Randy
@@ -20,6 +24,7 @@ public class GestorFormularios {
         return DAOFormulariosImpl.getInstance().create(formulario);
     }
     
+<<<<<<< Updated upstream
     public Formulario getFormulario(int identificador){
         Formulario formulario = null;
         
@@ -28,4 +33,35 @@ public class GestorFormularios {
         return formulario;
     }
     
+=======
+    public boolean aplicarSimulacion() {
+        List<Formulario> formularios = DAOFormulariosImpl.getInstance().getAll();
+        for (Formulario formulario : formularios) {
+            int random = (int)(Math.random()*(801));
+            formulario.setPuntajeObtenido(random);
+            boolean updated = DAOFormulariosImpl.getInstance().update(formulario);
+        }
+        return true;
+    }
+    
+    public boolean definirResultados() {
+        List<Formulario> formularios = DAOFormulariosImpl.getInstance().getAll();
+        for (Formulario formulario : formularios) {
+            Carrera carrera = formulario.getCarreraSolicitada();
+            if (formulario.getPuntajeObtenido() >= carrera.getPuntajeAdmision() && carrera.getCapacidadMax()>0) {
+                formulario.setEstado(TEstado.ACEPTADO);
+                carrera.setCapacidadMax(carrera.getCapacidadMax()-1);
+            }
+            else if (formulario.getPuntajeObtenido() >= carrera.getPuntajeAdmision() && carrera.getCapacidadMax()<=0)
+                formulario.setEstado(TEstado.EN_ESPERA);
+            else
+                formulario.setEstado(TEstado.RECHAZADO);  
+            boolean updated = DAOFormulariosImpl.getInstance().update(formulario);
+        }
+        return true;
+    }
+    
+    
+    
+>>>>>>> Stashed changes
 }
