@@ -120,6 +120,7 @@ public class Control {
         return formulario;
     }
     
+<<<<<<< Updated upstream
     public List<Formulario> visualizarSolicitudes(){
         List<Formulario> formularios = null;
         
@@ -127,4 +128,15 @@ public class Control {
         
         return formularios;
     }
+=======
+    public boolean simularAplicacionExamen() {
+        return gFormularios.aplicarSimulacion();
+    }
+    
+    public boolean procesarResultados() {
+        return gFormularios.definirResultados();
+    }
+    
+    
+>>>>>>> Stashed changes
 }

@@ -31,7 +31,11 @@ public class GestorFormularios {
         
         return formulario;
     }
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     public boolean aplicarSimulacion() {
         List<Formulario> formularios = DAOFormulariosImpl.getInstance().getAll();
         for (Formulario formulario : formularios) {
@@ -63,5 +67,8 @@ public class GestorFormularios {
         return DAOFormulariosImpl.getInstance().getAll();
     }
     
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }

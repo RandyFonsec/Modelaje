@@ -9,6 +9,7 @@ import controller.Control;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import model.Carrera;
 import model.Formulario;
 /**
  *
@@ -80,6 +81,24 @@ public class PruebaFormularios {
             System.out.println(form.toString());
         }
         
+        System.out.println("a "+form.getPuntajeObtenido());
+        System.out.println("b "+form.getEstado());
+        
+        int admision = form.getCarreraSolicitada().getCapacidadMax();
+        System.out.println(admision);
+        
+        boolean simulacion = Control.getInstance().simularAplicacionExamen();
+        if (simulacion) {
+            System.out.println("a1 "+form.getPuntajeObtenido());
+        }
+ 
+        boolean procesado = Control.getInstance().procesarResultados();
+        if (procesado)
+            System.out.println("bl "+form.getEstado());
+        
+     
+        admision = form.getCarreraSolicitada().getCapacidadMax();
+        System.out.println(admision);
         
         
     }
