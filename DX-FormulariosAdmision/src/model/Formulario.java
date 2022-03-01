@@ -31,6 +31,24 @@ public class Formulario {
         
     }
 
+    public Formulario(int identificador, TEstado estado, Carrera carreraSolicitada, int identificacion, String nombre, String apellido, Date fechaNacimiento, int edad, String correoElectronico, String numeroTelefonico, String direccionResidencia, String institucion) {
+        this.identificador = identificador;
+        this.estado = estado;
+        this.carreraSolicitada = carreraSolicitada;
+        this.identificacion = identificacion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.edad = edad;
+        this.correoElectronico = correoElectronico;
+        this.numeroTelefonico = numeroTelefonico;
+        this.direccionResidencia = direccionResidencia;
+        this.institucion = institucion;
+    }
+
+    
+    
+
     public int getIdentificador() {
         return identificador;
     }

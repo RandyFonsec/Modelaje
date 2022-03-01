@@ -6,7 +6,9 @@
 package controller;
 
 import java.util.Date;
+import java.util.List;
 import model.Carrera;
+import model.Formulario;
 
 /**
  *
@@ -26,9 +28,11 @@ public class DTOFormulario {
     private String direccionResidencia;
     private String institucion;
     
+    private List<Formulario> formularios;
     public DTOFormulario(){
         
     }
+    
     public DTOFormulario(int identificador, String estado, String carreraSolicitada, int puntajeObtenido, int identificacion, String nombre, String apellido, Date fechaNacimiento, int edad, String correoElectronico, String numeroTelefonico, String direccionResidencia, String institucion) {
         this.identificador = identificador;
         this.estado = estado;
