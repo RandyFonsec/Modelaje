@@ -15,4 +15,4 @@ b.Visualizar ordenado descendente por puntaje obtenido en el examen.
 
 Mostrar cantidad de solicitudes por carrera y por sede según uno de los estados APROBADO, RECHAZADO, EN_ESPERA.
 
-Mostrar todos los detalles de un formulario específico.
+
