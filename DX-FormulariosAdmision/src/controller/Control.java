@@ -98,15 +98,26 @@ public class Control {
     }
 
     public boolean crearFormulario(DTOFormulario dtoFormulario) {
+        //Recupera datos del dto
         TEstado estado = TEstado.valueOf(dtoFormulario.getEstado());
         Carrera carrera = (Carrera) DAOCarrerasImpl.getInstance().get(dtoFormulario.getCarreraSolicitada());
-
+        
+        //Crea el formulario
         Formulario formulario = new Formulario(dtoFormulario.getIdentificador(), estado, carrera, dtoFormulario.getIdentificacion(),
                 dtoFormulario.getNombre(), dtoFormulario.getApellido(), dtoFormulario.getFechaNacimiento(), dtoFormulario.getEdad(),
                 dtoFormulario.getCorreoElectronico(), dtoFormulario.getNumeroTelefonico(), dtoFormulario.getDireccionResidencia(),
                 dtoFormulario.getInstitucion());
         
+        //Lo crea en caso de ser correcto
         return gFormularios.agregarFormulario(formulario);
 
     }
+    
+    public Formulario verFormulario(int identificador){
+        Formulario formulario = null;
+        formulario= gFormularios.getFormulario(identificador);
+        return formulario;
+    }
+    
+    
 }

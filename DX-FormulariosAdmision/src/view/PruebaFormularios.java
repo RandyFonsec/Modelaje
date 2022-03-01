@@ -9,6 +9,7 @@ import controller.Control;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import model.Formulario;
 /**
  *
  * @author Randy
@@ -42,7 +43,17 @@ public class PruebaFormularios {
         
         //Registrando formulario
         if(Control.getInstance().crearFormulario(dtoFormulario)) System.out.println("Agregado"); else System.out.println("No agregado");;
-                
+        
+
+        //Recuperando un formulario por identificador
+        Formulario form = Control.getInstance().verFormulario(1);
+        if(form == null){
+            System.out.println("No existe un formulario asociado a ese identificador ");
+        }else{
+            System.out.println("Nombre y apellido asociado al formulario "+form.getNombre()+" "+form.getApellido());
+        }
+        
+        
         
     }
 }

@@ -20,4 +20,12 @@ public class GestorFormularios {
         return DAOFormulariosImpl.getInstance().create(formulario);
     }
     
+    public Formulario getFormulario(int identificador){
+        Formulario formulario = null;
+        
+        formulario = (Formulario) DAOFormulariosImpl.getInstance().get(identificador);
+        
+        return formulario;
+    }
+    
 }

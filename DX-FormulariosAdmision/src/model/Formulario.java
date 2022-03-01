@@ -185,6 +185,9 @@ public class Formulario {
         if (!Objects.equals(this.apellido, other.apellido)) {
             return false;
         }
+        if (this.identificacion != other.identificacion) {
+            return false;
+        }
         return true;
     }
     
