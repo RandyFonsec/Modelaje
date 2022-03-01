@@ -24,7 +24,6 @@ public class GestorFormularios {
         return DAOFormulariosImpl.getInstance().create(formulario);
     }
     
-<<<<<<< Updated upstream
     public Formulario getFormulario(int identificador){
         Formulario formulario = null;
         
@@ -32,8 +31,7 @@ public class GestorFormularios {
         
         return formulario;
     }
-    
-=======
+
     public boolean aplicarSimulacion() {
         List<Formulario> formularios = DAOFormulariosImpl.getInstance().getAll();
         for (Formulario formulario : formularios) {
@@ -60,8 +58,10 @@ public class GestorFormularios {
         }
         return true;
     }
+
+    List<Formulario> getSolicitudes() {
+        return DAOFormulariosImpl.getInstance().getAll();
+    }
     
-    
-    
->>>>>>> Stashed changes
+
 }

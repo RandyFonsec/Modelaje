@@ -7,6 +7,7 @@ package controller;
 
 import controller.DAO.DAOCarrerasImpl;
 import controller.DAO.DAOSedesImpl;
+import java.util.List;
 import model.Carrera;
 import model.Formulario;
 import model.Sede;
@@ -119,5 +120,11 @@ public class Control {
         return formulario;
     }
     
-    
+    public List<Formulario> visualizarSolicitudes(){
+        List<Formulario> formularios = null;
+        
+        formularios = gFormularios.getSolicitudes();
+        
+        return formularios;
+    }
 }

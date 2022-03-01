@@ -44,7 +44,34 @@ public class PruebaFormularios {
         //Registrando formulario
         if(Control.getInstance().crearFormulario(dtoFormulario)) System.out.println("Agregado"); else System.out.println("No agregado");;
         
-
+        //Creando formulario con ayuda del dto
+        dtoFormulario.setIdentificador(2);
+        dtoFormulario.setIdentificacion(2323333);
+        dtoFormulario.setNombre("Kendall");
+        dtoFormulario.setApellido("Cascante");
+        dtoFormulario.setCarreraSolicitada("IC");
+        dtoFormulario.setEstado("SOLICITANTE");
+        sDate1 = "15/08/2001";
+        formatter1=new SimpleDateFormat("dd/MM/yyyy");
+        date1=formatter1.parse(sDate1);
+        dtoFormulario.setFechaNacimiento(date1);
+        dtoFormulario.setEdad(21);
+        dtoFormulario.setCorreoElectronico("aaad@sda.dsd");
+        dtoFormulario.setNumeroTelefonico("33341234");
+        dtoFormulario.setDireccionResidencia("Juan Viñas");
+        dtoFormulario.setInstitucion("Colegio Nocturno");
+        
+        //Registrando formulario
+        if(Control.getInstance().crearFormulario(dtoFormulario)) System.out.println("Agregado"); else System.out.println("No agregado");;
+        
+        
+        
+        //Recuperando solicitudes
+        for(Formulario f : Control.getInstance().visualizarSolicitudes()){
+            System.out.println(f.getIdentificador());
+        }
+        
+        
         //Recuperando un formulario por identificador
         Formulario form = Control.getInstance().verFormulario(1);
         if(form == null){
