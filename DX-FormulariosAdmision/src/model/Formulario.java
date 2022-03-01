@@ -155,7 +155,19 @@ public class Formulario {
 
     @Override
     public String toString() {
-        return "Formulario{" + "identificador=" + identificador + ", estado=" + estado + ", carreraSolicitada=" + carreraSolicitada + ", puntajeObtenido=" + puntajeObtenido + ", identificacion=" + identificacion + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", edad=" + edad + ", correoElectronico=" + correoElectronico + ", numeroTelefonico=" + numeroTelefonico + ", direccionResidencia=" + direccionResidencia + ", institucion=" + institucion + '}';
+        return "Formulario: " + "Identificador = " + identificador+ 
+                "\nEstado = " + estado + 
+                "\ncarreraSolicitada = " + carreraSolicitada.toString() + 
+                "\nPuntajeObtenido = " + puntajeObtenido + 
+                "\nIdentificacion = " + identificacion + 
+                "\nNombre = " + nombre + 
+                "\nApellido = " + apellido + 
+                "\nFechaNacimiento = " + fechaNacimiento + 
+                "\nEdad = " + edad + 
+                "\nCorreoElectronico = " + correoElectronico + 
+                "\nNumeroTelefonico = " + numeroTelefonico + 
+                "\nDireccionResidencia = " + direccionResidencia + 
+                "\nInstitucion = " + institucion;
     }
 
     @Override

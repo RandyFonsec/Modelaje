@@ -50,7 +50,7 @@ public class PruebaFormularios {
         if(form == null){
             System.out.println("No existe un formulario asociado a ese identificador ");
         }else{
-            System.out.println("Nombre y apellido asociado al formulario "+form.getNombre()+" "+form.getApellido());
+            System.out.println(form.toString());
         }
         
         
