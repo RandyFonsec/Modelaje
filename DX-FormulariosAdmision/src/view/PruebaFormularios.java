@@ -65,7 +65,11 @@ public class PruebaFormularios {
         //Registrando formulario
         if(Control.getInstance().crearFormulario(dtoFormulario)) System.out.println("Agregado"); else System.out.println("No agregado");;
         
+        //Simulando notas
+        Control.getInstance().simularAplicacionExamen();
         
+        //Procesar resultados
+        Control.getInstance().procesarResultados();
         
         //Recuperando solicitudes
         for(Formulario f : Control.getInstance().visualizarSolicitudes()){
@@ -81,24 +85,6 @@ public class PruebaFormularios {
             System.out.println(form.toString());
         }
         
-        System.out.println("a "+form.getPuntajeObtenido());
-        System.out.println("b "+form.getEstado());
-        
-        int admision = form.getCarreraSolicitada().getCapacidadMax();
-        System.out.println(admision);
-        
-        boolean simulacion = Control.getInstance().simularAplicacionExamen();
-        if (simulacion) {
-            System.out.println("a1 "+form.getPuntajeObtenido());
-        }
- 
-        boolean procesado = Control.getInstance().procesarResultados();
-        if (procesado)
-            System.out.println("bl "+form.getEstado());
-        
-     
-        admision = form.getCarreraSolicitada().getCapacidadMax();
-        System.out.println(admision);
         
         
     }
